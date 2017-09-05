@@ -1,0 +1,42 @@
+.see-detial-btn{
+	display: inline;
+	padding: 6px 11px;
+}
+.handle{
+	background: #2CB238;
+}
+.handle:hover{
+	background: #2bab36;
+}
+.handled,
+.handled:hover{
+	background: #DCDCDC;
+}
+.handled:visited{
+	color: #333;
+}
+/*处理模块*/
+.modal-content-back{
+	width: 1200px;
+	background: #ecf0f5;
+	margin: 60px auto;
+	border-radius: 5px;
+	padding: 20px;
+}
+.fileinput-button {
+	position: absolute;
+    bottom: 0;
+    display: inline-block;
+    overflow: hidden;
+}
+.fileinput-button input{
+    position:absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px;
+}
+select{
+	width: calc(100% - 70px);
+}

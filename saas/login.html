@@ -1,0 +1,44 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<!DOCTYPE HTML >
+<html >
+<head>
+	<title>登录</title>
+	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/login.css">
+</head>
+<body>
+	<div class="page_content">
+		<div class="login_content">
+			<div class="top_login">
+				<h2>利民SaaS后台管理系统</h2>
+			</div>
+			<form action="login" method="post">
+			<div class="main_content">
+				<ul class="pagLog_ul">
+					<li>
+						<label>用户名：</label>
+						<input type="text" name="username" tabindex="1">
+					</li>
+					<li>
+						<label>密码：</label>
+						<input type="password" name="password" tabindex="2">
+					</li>
+					<li>
+						<label>验证码：</label>
+						<input id="vertify" type="text" name="randomcode" tabindex="3">
+						<img id="randomcode_img" src="validatecode.html" alt=""
+						width="56" height="20" align='absMiddle'/>
+						
+					</li>
+					<li class="login_btn">
+						<input type="submit" value="登  录" name="" tabindex="4">
+					</li>
+				</ul>
+			</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

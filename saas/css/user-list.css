@@ -1,0 +1,128 @@
+.form_block{
+	border-top: 10px solid #0091CC;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	background: #FFF;
+	padding: 0 10px 10px;
+}
+.add-btn{
+	padding: 10px;
+	border-bottom: 1px solid #D6D7DC;
+	margin-bottom: 10px;
+}
+.btn-success{
+	background: #ff5722;
+	border-color: #e85121;
+	color: #FFF;
+	width: 130px;
+	height: 40px;
+}
+.btn-success:hover,
+.btn-success:active,
+.btn-success:focus{
+	background: #e85121;
+	border-color: #e85121;
+}
+.update-time{
+	width: 40%;
+	line-height: 30px;
+}
+.user-adress,
+.user-name,
+.user-id{
+	width: 20%;
+	line-height: 30px;
+	text-align:right;
+}
+select{
+	width: 100%;
+	display: inline-block;
+	height: 34px;
+	background: transparent;
+}
+input{
+	width: calc(100% - 70px);
+}
+.update-time input{
+	width: calc(50% - 60px);
+}
+.search{
+	text-align: right;
+}
+.search input{
+	width: calc(20% - 70px);
+	font-size: 14px;
+	height: 32px;
+	background: #E19637;
+	border:none;
+	border-radius: 2px;
+	color: #FFF;
+	margin-top: 10px;
+}
+.search input:hover{
+	background: #efa64b;
+}
+
+.table-content{
+	background: #FFF;
+	padding: 0 10px;
+	height: 506px;
+}
+.category{
+	font-size: 14px;
+	color: #000000;
+	letter-spacing: 0;
+	font-weight: bold;
+	background: #F4F4F4;
+	border: 1px solid #D6D7DC;
+	border-radius: 2px 2px 0 0;
+}
+
+.table-bordered>tbody>tr>td{
+	line-height: 45px;
+	padding: 0 10px;
+	text-align: center;
+}
+/*.table-bordered>tbody>tr .number{
+	text-align: left;
+}*/
+.see-detial-btn{
+	width: 100%;
+	display: inline-block;
+	background: #16A6D2;
+	border-radius: 2px;
+	color: #FFF;
+	text-decoration: none;
+	line-height: 30px;
+}
+.see-detial-btn:hover{
+	background: #1798bf;
+	color: #FFF;
+	text-decoration: none;
+}
+.see-detial-btn:visited{
+	color: #FFF;
+	text-decoration: none;
+}
+.edit{
+	width: 100%;
+	display: inline-block;
+	background: #2CB238;
+	border-radius: 2px;
+	color: #FFF;
+	text-decoration: none;
+	line-height: 30px;
+}
+.edit:hover{
+	background: #2bab36;
+	color: #FFF;
+	text-decoration: none;
+}
+.edit:visited{
+	color: #FFF;
+	text-decoration: none;
+}
+.page-break{
+	background: #FFF;
+	padding: 10px 10px 98px;
+}

@@ -1,0 +1,123 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台管理系统</title>
+	<meta charset="utf-8">  
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- 时间控件css -->
+	<link rel="stylesheet" type="text/css" href="plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/timepicker.css">
+
+	<!-- custom -->
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/meter-reading-list.css">
+	
+</head>
+<body>
+	<header>
+		<div class="header">
+		</div>
+	</header>
+	<div class="content">
+		<div class="menu float-left">
+		</div>
+		<div class="detial float-left">
+			<div id="template">
+				<div class="navigation">
+					<div class="title float-left">系统维护</div>
+					<div class="path float-right">
+						<span class="home_img"></span>
+						<a href="index.html">主页</a>
+						<span class="next-label">></span>
+						<a href="">系统维护</a>
+						<span class="next-label">></span>
+						<a href="">系统日志</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form_block" style="padding-top: 40px;">
+					<div class="table-content">
+						<table class="table table-bordered">
+							<tr class="category">
+								<td>序号</td>
+								<td>用户名称</td>
+								<td>用户编号</td>
+								<td>时间</td>
+								<td>行为</td>
+								<td>IP</td>
+							</tr>
+							<tr>
+								<td>序号</td>
+								<td>用户名称</td>
+								<td>用户编号</td>
+								<td>时间</td>
+								<td>行为</td>
+								<td>IP</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="page-break">
+					<ul class="pagination float-right">
+					    <li><a href="#">上一页</a></li>
+					    <li class="page-break-li active"><a href="#">1</a></li>
+					    <li class="page-break-li"><a href="#">2</a></li>
+					    <li class="page-break-li"><a href="#">3</a></li>
+					    <li class="page-break-li"><a href="#">4</a></li>
+					    <li class="page-break-li"><a href="#">5</a></li>
+					    <li><a href="#">下一页</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<p class="company-name">哈尔滨利民经济技术开发区自来水有限公司</p>
+		</div>	
+		<div class="clearfix"></div>
+	</div>
+	<!-- jQuery -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./plugins/jQuery/jquery-3.2.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- 时间控件 -->
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+	<!-- custom -->
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/page-break.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'get',
+				url: 'header.html',
+				success:function(data){
+					$('.header').html(data);
+				},
+			});
+			$.ajax({
+				type: 'get',
+				url: 'menu.html',
+				success:function(data){
+					$('.menu').html(data);
+					$('.list-item:eq(1)').addClass('active');
+					$('#system-maintenance').addClass('in');
+					$('.list-item:eq(1) .sublist-item:eq(0)').addClass('sub_active');
+					$('.list-item').click(function() {
+						$('.list-item').removeClass('active');
+						$(this).addClass('active');
+					});
+				},
+			});
+		});
+	</script>
+</body>
+</html>

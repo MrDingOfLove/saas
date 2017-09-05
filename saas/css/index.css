@@ -1,0 +1,188 @@
+body{
+	font-family: PingFangSC-Regular;
+}
+/*Header*/
+.header{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background: #FFFFFF;
+	border: 1px solid #D6D7DC;
+	padding: 0 50px 21px;
+}
+.saas{
+	font-size: 24px;
+	font-weight: bolder;
+	color: #000000;
+	letter-spacing: 0;
+}
+.home_btn{
+	width: 98px;
+	border-left: 1px solid #D8D8D8;
+	border-right: 1px solid #D8D8D8;
+}
+.home_btn img{
+	display: block;
+	width: 34px;
+	height: 27px;
+	margin: 15px auto;
+}
+.admin_btn{
+	padding: 0 20px;
+}
+.admin_detial{
+	margin: 14px 0;
+}
+.admin_img{
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	border-radius: 50%;
+	border: 1px solid #D8D8D8
+}
+.admin_img img{
+	width: 100%;
+	display: block;
+}
+.admin_name{
+	line-height: 30px;
+}
+.admin_name p{
+	font-size: 16px;
+	color: #000000;
+	letter-spacing: 0;
+}
+.admin_btn .dropdown-menu{
+	min-width: 140px;
+}
+/*Header End*/
+
+/*Content*/
+
+/*left*/
+.menu{
+	width: 230px;
+	height: 800px;
+	background: #002C3E;
+}
+.admin{
+	padding-left: 20px;
+	margin: 20px 0;
+}
+.header-img{
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	background: red;
+}
+.admin-name p{
+	padding-left: 10px;
+	line-height: 45px;
+	font-size: 16px;
+	color: #FFFFFF;
+	letter-spacing: 0;
+}
+.master{
+	padding-left: 20px;
+	line-height: 46px;
+	font-size: 14px;
+	color: #353A3C;
+	letter-spacing: 0;
+	background: #001118;
+}
+.menulist a{
+	padding-left: 6px;
+	line-height: 46px;
+	font-size: 16px;
+	color: #71909C;
+	letter-spacing: 0;
+	display: block;
+}
+.menulist a:hover{
+	text-decoration: none;
+}
+.list-item{
+	border-bottom: none; 
+}
+.list-item:hover{
+	background: #004B68;
+}
+.list-item:hover a{
+	color: #82B3CA;
+}
+.sublist-item img,
+.list-item img{
+	margin-left: 20px;
+	width: 22px;
+	height: 22px;
+}
+.list-item ul{
+	background: #00394E; 
+}
+.list-item a{
+	cursor: pointer;
+}
+.sublist-item{
+	border-bottom: 1px solid #001D28;
+	padding-left: 27px;
+}
+.panel{
+	background: transparent;
+	margin-bottom: 0;
+	border-radius: 0;
+}
+.menu .active{
+	border-left: 5px solid #00A6EA;
+	background: #004B68;
+}
+.menu .active a{
+	color: #82B3CA;
+}
+.sublist-item:hover a,
+.menu .sub_active a{
+	font-size: 16px;
+	color: #CAD9E0;
+	letter-spacing: 0;
+}
+
+/*left end*/
+
+/*right*/
+.detial{	
+	width: calc(100% - 230px);
+}
+.company-name{
+	padding-right: 20px;
+	text-align: right;
+	line-height: 40px;
+	font-size: 12px;
+	color: #999999;
+	letter-spacing: 0;
+}
+#template{
+	background: #ecf0f5;
+	padding: 0 20px 20px;
+}
+.ground{
+	background: #FFF;
+}
+/*right end*/
+.pagination li a{
+	border-radius: 2px;
+	margin: 0 4px;
+}
+.pagination>.active>a,
+.pagination>.active>a:hover,
+.pagination>.active>a:visited{
+	background: #16A6D2;
+}
+select{
+	width: 100%;
+	background: transparent;
+	height: 32px;
+
+}
+input{
+	padding-left: 10px;
+}
+/*Content End*/

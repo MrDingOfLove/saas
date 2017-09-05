@@ -1,0 +1,90 @@
+.hint-label{
+	border-top: 10px solid #0091CC;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	font-size: 14px;
+	color: #333333;
+	letter-spacing: 0;
+	text-align: left;
+	padding:10px 20px; 
+	background: #FFF;
+	border-bottom: 1px solid #D6D7DC; 
+}
+.form-body{
+	background: #FFF;
+	padding: 0 20px 50px;
+}
+.info-label{
+	padding: 10px 0;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+	letter-spacing: 0;
+}
+.info-detial{
+	width: 100%;
+	padding: 5px 0 5px 10px;
+	font-size: 14px;
+	color: #333333;
+	letter-spacing: 0;
+	border: 1px solid #D8D8D8;
+	border-radius: 2px;
+	margin-bottom: 10px;
+}
+.info-detial-id{
+	width: 85%;
+}
+.sure-id{
+	width: 110px;
+	height: 32px;
+	background: #16A6D2;
+	border-radius: 2px;
+	color: #FFF;
+}
+.sure-id-off{
+	background: #DDDDDD;
+	border-radius: 2px;
+	width: 110px;
+	height: 32px;
+	font-size: 14px;
+	color: #666666;
+	letter-spacing: 0;
+}
+.sure-id:hover{
+	background: #1599c1;
+	color: #FFF;
+}
+.operation-btn{
+	text-align:right;
+	padding: 30px 0 0;
+}
+.operation-btn .btn{
+	width: 110px;
+	height: 32px;
+	color: #FFF;
+}
+.go-back{
+	background: #E19637;
+}
+.go-edit{
+	background: #16A6D2;
+}
+.go-back:hover{
+	background: #d68e34;
+	color: #FFF;
+}
+.go-edit:hover{
+	background: #1ea1ca;
+	color: #FFF;
+}
+.print-data img{
+	width: 100%;
+	display: block;
+	height: 200px;
+	margin-top:20px;
+	border: 1px solid #DDDDDD;
+}
+.date input{
+	width: 40%;
+	height: 32px;
+}

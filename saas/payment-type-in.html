@@ -1,0 +1,119 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台管理系统</title>
+	<meta charset="utf-8">  
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- custom -->
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/user-detial.css">
+</head>
+<body>
+<header>
+	<div class="header">
+	</div>
+</header>
+<div class="content">
+	<div class="menu float-left">
+	</div>
+	<div class="detial float-left">
+		<div id="template">
+			<div class="navigation">
+				<div class="title float-left">缴费录入</div>
+				<div class="path float-right">
+					<span class="home_img"></span>
+					<a href="index.html">主页</a>
+					<span class="next-label">></span>
+					<a href="">缴费管理</a>
+					<span class="next-label">></span>
+					<a href="">缴费录入</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="user-info">
+				<div class="user-info-label"><p>缴费录入</p></div>
+				<div class="user-info-detial">
+					<form action="" method="get">
+						<div >
+							<p class="info-label">用户编号</p>
+							<input type="text" class="info-detial" name="">
+						</div>
+						<div>
+							<div class="float-left" style="width: 50%; padding-right: 10px;">
+								<p class="info-label">交费来源</p>
+								<select class="info-detial" name="">
+									<option value="">电汇</option>
+								</select>
+							</div>
+							<div class="float-left" style="width: 50%; padding-left: 10px;">
+								<p class="info-label">时间</p>
+								<input type="text" class="info-detial" name="">
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div>
+							<p class="info-label">用水量</p>
+							<input type="text" class="info-detial" name="">
+						</div>
+						<div>
+							<p class="info-label">上月余额(元)</p>
+							<input type="text" class="info-detial" name="">
+						</div>
+						<div>
+							<p class="info-label">往月欠费(元)</p>
+							<input type="text" class="info-detial" name="">
+						</div>
+						<div class="operation-btn">
+							<input type="submit" class="btn btn-default go-edit" value="提交">
+						</div>
+					</form>
+				</div>
+			</div>
+			<p class="company-name">哈尔滨利民经济技术开发区自来水有限公司</p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- jQuery -->
+	<script src="./plugins/jQuery/jquery-3.2.0.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+	<!-- custom -->
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'get',
+				url: 'header.html',
+				success:function(data){
+					$('.header').html(data);
+				},
+			});
+			$.ajax({
+				type: 'get',
+				url: 'menu.html',
+				success:function(data){
+					$('.menu').html(data);
+					$('.list-item:eq(3)').addClass('active');
+					$('#payment-managemen').addClass('in');
+					$('.list-item:eq(3) .sublist-item:eq(0)').addClass('sub_active');
+					$('.list-item').click(function() {
+						$('.list-item').removeClass('active');
+						$(this).addClass('active');
+					});
+				},
+			});
+		});
+	</script>
+</body>
+</html>

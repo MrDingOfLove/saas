@@ -1,0 +1,20 @@
+.form-body{
+	padding-top: 20px;
+}
+.info-label{
+	width: 90px;
+	float: left;
+	padding:5px 0;
+}
+.info-detial{
+	width: 30%;
+	float: left;
+}
+.radio-item{
+	display: inline-block;
+	padding: 5px 10px 5px 0px;
+}
+label{
+    color: #000000;
+    font-weight: bolder;
+}

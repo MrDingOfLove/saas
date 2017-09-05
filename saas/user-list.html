@@ -1,0 +1,277 @@
+ <!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> -->
+  <!-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台管理系统</title>
+	<meta charset="utf-8">  
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- 时间控件css -->
+	<link rel="stylesheet" type="text/css" href="plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+
+	<!-- custom -->
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/user-list.css">
+	<link rel="stylesheet" type="text/css" href="./css/user-detial.css">
+	<link rel="stylesheet" type="text/css" href="./css/timepicker.css">
+</head>
+<body>
+	<header>
+		<div class="header">
+
+		</div>
+	</header>
+	<div class="content">
+		<div class="menu float-left">
+
+		</div>
+		<div class="detial float-left">
+			<div id="template">
+				<div class="navigation">
+					<div class="title float-left">用户列表</div>
+					<div class="path float-right">
+						<span class="home_img"></span>
+
+						<a href="index.html">主页</a>
+						<span class="next-label">></span>
+						<a href="user-list.html">用户管理</a>
+						<span class="next-label">></span>
+						<a href="user-list.html">用户列表</a>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form_block">
+					<div class="add-btn">
+						<button id="add" type="button" class="btn btn-success" data-toggle="modal" data-target="#info-edit">新增用户</button>
+					</div>
+				    <form action="" method="post">
+						<div class="update-time float-left">
+							<span>导入系统时间:</span>
+							<input type="text" id="datetimeStart"  class="form_datetime" name="time1">
+							<span>-</span>
+							<input type="text" id="datetimeEnd" class="form_datetime" name="time2">
+						</div>
+						<div class="user-adress float-left">
+							<span>地址:</span>
+							<input type="text" name="address">
+						</div>
+						<div class="user-id float-left">
+							<span>用户编号:</span>
+							<input type="text" name="cid">
+						</div>
+						<div class="user-name float-left">
+							<span>用户名:</span>
+							<input type="text" name="cname">
+						</div>
+						<div class="search clearfix">
+							<input type="submit" value="搜索">
+						</div>
+ 					</form> 
+					<div class="clearfix"></div>
+				</div>
+				<div class="table-content">
+					<table class="table table-bordered">
+						<tr class="category">
+							<td>用户编号</td>
+							<td>用户名称</td>
+							<td>地址</td>
+							<td>联系方式</td>
+							<td>备注</td>
+							<td class="number">最后一次交费时间</td>
+							<td>操作</td>
+						</tr>
+						<c:forEach items="${page}" var="row">
+						<tr>
+							<td>${row.getClient_id()}</td>
+							<td>${row.getClient_name()}</td>
+							<td>${row.getClient_address()}</td>
+							<td>${row.getClient_tel()}</td>
+							<td>${row.getClient_remark()}</td>
+							<td>2017-05-05</td>
+							<td style="/*width: 15%;*/">
+								<a style="display: inline;padding: 6px 11px;" id="a" class="see-detial-btn" href="user-detial.html">查看</a>
+								<!-- <a style="display: inline;padding: 6px 11px;" id="a" class="edit" href="">编辑</a> -->
+							</td>
+						</tr>
+					   </c:forEach>
+					</table>
+				</div>
+				<div class="page-break">
+					<ul class="pagination float-right">
+					    <li><a href="#">上一页</a></li>
+					    <li class="page-break-li active"><a href="#">1</a></li>
+					    <li class="page-break-li"><a href="#">2</a></li>
+					    <li class="page-break-li"><a href="#">3</a></li>
+					    <li class="page-break-li"><a href="#">4</a></li>
+					    <li class="page-break-li"><a href="#">5</a></li>
+					    <li><a href="#">下一页</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<p class="company-name">哈尔滨利民经济技术开发区自来水有限公司</p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- 添加信息 模块-->
+	<div class="modal fade" id="info-edit" tabindex="-1" role="dialog" aria-hidden="true">
+    	<div class="modal-content-back">
+    		<form action="" method="post">
+    			<div class="navigation">
+					<div class="title float-left">添加用户</div>
+					<div class="path float-right">
+						<span class="home_img"></span>
+						<span>主页</span>
+						<span class="next-label">></span>
+						<span>用户列表</span>
+						<span class="next-label">></span>
+						<span>添加用户</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="user-info">
+					<div class="user-info-label"><p>添加用户</p></div>
+					<div class="user-info-detial">
+						<div class="block-of-info-basic">
+							<div class="block-content float-left">
+								<p class="info-label">用户编号</p>
+								<input type="text" class="info-detial"  name="client_id" value="${returnclient.getClient_id()}">
+								<p class="info-label">用户名称</p>
+								<input type="text" class="info-detial"  name="client_name" value="${returnclient.getClient_name()}">
+							</div>
+							<div class="block-img float-left">
+								<img src="">
+								<span class=" fileinput-button">
+						            <span style="padding: 0 10px;">上传用户照片</span>
+						            <input type="file" name="client_image" value="${returnclient.getClient_image()}">
+						        </span>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div>
+							<div class="float-left" style="width: 50%; padding-right: 10px;">
+								<p class="info-label">用户类型</p>
+								 <select class="info-detial" name="client_type">
+								 	<option value="0">请选择用户类型</toption>
+						            <option value="长期使用" >长期使用</option>
+						            <option value="个人用户">个人用户</option>
+						            <option value="企业用户">企业用户</option>
+						            <c:if test="${returnum eq 101}">
+						            <option value="${returnclient.getClient_type()}" selected>${returnclient.getClient_type()}</option>
+						            </c:if>
+						        </select>
+							</div>
+							<div class="float-left" style="width: 50%; padding-left: 10px;">
+								<p class="info-label">表初始度数</p>
+								<input type="text" class="info-detial" value="${returnclient.getClient_value()}" name="client_value">
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div>
+							<div class="float-left" style="width: 33.3%; padding-right: 10px;">
+								<p class="info-label">表编码</p>
+								<input type="text" class="info-detial" value="${returnclient.getClient_infoid()}" name="client_infoid">
+							</div>
+							<div class="float-left" style="width: 33.3%; padding:0 10px;">
+								<p class="info-label">厂家</p>
+								<input type="text" class="info-detial" value="${returnclient.getClient_factory()}" name="client_factory">
+							</div>
+							<div class="float-left" style="width: 33%; padding-left: 10px;">
+								<p class="info-label">装表时间</p>
+								<input type="text" id="datetime"  class="form_datetime info-detial" name="client_time" value="${returnclient.getClient_time()}">
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div>
+							<p class="info-label">联系电话</p>
+							<input type="text" class="info-detial" value="${returnclient.getClient_tel()}" name="client_tel">
+						</div>
+						<div>
+							<p class="info-label">现居地址</p>
+							<input type="text" class="info-detial" value="${returnclient.getClient_address()}" name="client_address">
+						</div>
+						<div>
+							<p class="info-label">备注信息</p>
+							<textarea class="info-detial" name="client_remark" id="" rows="5" value="">${returnclient.getClient_remark()}</textarea>
+						</div>
+						<div class="operation-btn">
+							<input class="btn btn-default go-edit float-left" type="submit" value="确定">
+							<a href="#" class="btn btn-default go-back" data-dismiss="modal">返回</a>
+							<input style="background: #DCDCDC; color: #000;" class="btn btn-default go-edit" type="reset" value="重置">
+						</div>
+					</div>
+				</div>
+    		</form>
+    	</div>
+	</div>
+	<!-- 修改模块 -->
+	<!-- jQuery -->
+	<script src="./plugins/jQuery/jquery-3.2.0.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+     <script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <!-- 时间控件 -->
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+	<!-- custom -->
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/page-break.js"></script>
+	<script type="text/javascript">
+	    $("#datetimeStart").datetimepicker({
+	        format: 'yyyy-mm-dd HH:ii:ss',
+	        minView: 0 ,
+	        language: 'zh-CN',
+	        autoclose:true,
+	    });
+	    $("#datetimeEnd").datetimepicker({
+	        format: 'yyyy-mm-dd HH:ii:ss',
+	        minView: 0 ,
+	        language: 'zh-CN',
+	        autoclose:true,
+	    });
+	    $("#datetime").datetimepicker({
+	        format: 'yyyy-mm-dd',
+	        minView: 2 ,
+	        language: 'zh-CN',
+	        autoclose:true,
+	    });
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'get',
+				url: 'header.html',
+				success:function(data){
+					$('.header').html(data);
+				},
+			});
+			$.ajax({
+				type: 'get',
+				url: 'menu.html',
+				success:function(data){
+					$('.menu').html(data);
+					$('.list-item:eq(4)').addClass('active');
+					$('#user-list').addClass('in');
+					$('.list-item:eq(4) .sublist-item:eq(0)').addClass('sub_active');
+					$('.list-item').click(function() {
+						$('.list-item').removeClass('active');
+						$(this).addClass('active');
+					});
+				},
+			});
+			$('#add').mousedown(function(event) {
+				$(this).css('background','#ff5722');
+			});
+		});
+	</script>
+</body>
+</html>

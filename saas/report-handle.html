@@ -1,0 +1,135 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台管理系统</title>
+	<meta charset="utf-8"> 
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- 时间控件css -->
+	<link rel="stylesheet" type="text/css" href="plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/timepicker.css">
+
+	<!-- custom -->
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/meter-reading-list.css">
+	<link rel="stylesheet" type="text/css" href="./css/repairs-type-in.css">
+	<link rel="stylesheet" type="text/css" href="./css/report-list.css">
+	
+</head>
+<body>
+	<header>
+		<div class="header">
+		</div>
+	</header>
+	<div class="content">
+		<div class="menu float-left">
+		</div>
+		<div class="detial float-left">
+			<div id="template">
+				<div class="navigation">
+					<div class="title float-left">举报处理</div>
+					<div class="path float-right">
+						<span class="home_img"></span>
+						<span>主页</span>
+						<span class="">></span>
+						<span>报修管理</span>
+						<span class="next-label">></span>
+						<span>举报列表</span>
+						<span class="next-label">></span>
+						<span>举报处理</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<form action="" method="post">
+					<div class="user-info">
+						<div class="user-info-label"><p>举报处理</p></div>
+						<div class="user-info-detial">
+							<div class="block-content">
+								<p class="info-label">表编号：S000011111</p>
+								<input readonly type="hidden" value="S000011111" name="">
+							</div>
+							<div class="block-content">
+								<p class="info-label">用户编号</p>
+								<input readonly type="text" class="info-detial" value="S000011111" name="">
+							</div>
+							<div>
+								<p class="info-label">处理结果</p>
+								<input type="text" class="info-detial" value="13100000000" name="">
+							</div>
+							<div>
+								<p class="info-label">备注</p>
+								<textarea name="" rows="4" class="info-detial"></textarea>
+							</div>
+							
+							<div class="operation-btn">
+								<a href="report-list.html" class="btn btn-default go-back">返回</a>
+								<input class="btn btn-default go-edit" type="submit" value="提交">
+							</div>
+						</div>
+					</div>
+	    		</form>
+			</div>
+			<p class="company-name">哈尔滨利民经济技术开发区自来水有限公司</p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- jQuery -->
+	<script src="./plugins/jQuery/jquery-3.2.0.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- 时间控件 -->
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+	<!-- custom -->
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/page-break.js"></script>
+	<script type="text/javascript">
+	    $("#datetimeStart").datetimepicker({
+	        format: 'yyyy-mm-dd HH:ii:ss',
+	        minView: 0 ,
+	        language: 'zh-CN',
+	        autoclose:true,
+	    });
+	    $("#datetimeEnd").datetimepicker({
+	        format: 'yyyy-mm-dd HH:ii:ss',
+	        minView: 0 ,
+	        language: 'zh-CN',
+	        autoclose:true,
+	    });
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'get',
+				url: 'header.html',
+				success:function(data){
+					$('.header').html(data);
+				},
+			});
+			$.ajax({
+				type: 'get',
+				url: 'menu.html',
+				success:function(data){
+					$('.menu').html(data);
+					$('.list-item:eq(5)').addClass('active');
+					$('#service-management').addClass('in');
+					$('.list-item:eq(5) .sublist-item:eq(1)').addClass('sub_active');
+					$('.list-item').click(function() {
+						$('.list-item').removeClass('active');
+						$(this).addClass('active');
+					});
+				},
+			});
+		});
+	</script>
+</body>
+</html>

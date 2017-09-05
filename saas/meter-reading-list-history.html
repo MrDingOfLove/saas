@@ -1,0 +1,122 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台管理系统</title>
+	<meta charset="utf-8">  
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- custom -->
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/meter-reading-list-history.css">
+</head>
+<body>
+	<header>
+		<div class="header">
+		</div>
+	</header>
+	<div class="content">
+		<div class="menu float-left">
+		</div>
+		<div class="detial float-left">
+			<div id="template">
+				<div class="navigation">
+					<div class="title float-left">抄表列表</div>
+					<div class="path float-right">
+						<span class="home_img"></span>
+						<a href="index.html">主页</a>
+						<span class="next-label">></span>
+						<a href="meter-reading-list.html">抄表管理</a>
+						<span class="next-label">></span>
+						<a href="meter-reading-list.html">抄表列表</a>
+						<span class="next-label">></span>
+						<a href="meter-reading-list-detial.html">查看详情</a>
+						<span class="next-label">></span>
+						<a href="meter-reading-list-history.html">历史记录</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="hint-label"><p>查看历史记录</p></div>
+				<div class="table-content">
+					<table class="table">
+						<tr class="category">
+							<td>用户</td>
+							<td>时间</td>
+							<td>表度数</td>
+							<td>抄表人</td>
+						</tr>
+						<tr>
+							<td>zhangsan</td>
+							<td>1970-01-01 00:33:44</td>
+							<td>
+								<span>表一：</span><span>25</span>&nbsp&nbsp
+								<span>表二：</span><span>25</span>&nbsp&nbsp
+								<span>表三：</span><span>25</span>&nbsp&nbsp
+							</td>
+							<td>zhangsan</td>
+						</tr>
+					</table>
+				</div>
+				<div class="page-break">
+					<div class="back-btn float-left">
+						<a href="meter-reading-list-detial.html">返回</a>
+					</div>
+					<ul class="pagination float-right">
+					    <li><a href="#">上一页</a></li>
+					    <li class="page-break-li active"><a href="#">1</a></li>
+					    <li class="page-break-li"><a href="#">2</a></li>
+					    <li class="page-break-li"><a href="#">3</a></li>
+					    <li class="page-break-li"><a href="#">4</a></li>
+					    <li class="page-break-li"><a href="#">5</a></li>
+					    <li><a href="#">下一页</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<p class="company-name">哈尔滨利民经济技术开发区自来水有限公司</p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- jQuery -->
+	<script src="./plugins/jQuery/jquery-3.2.0.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- custom -->
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/page-break.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'get',
+				url: 'header.html',
+				success:function(data){
+					$('.header').html(data);
+				},
+			});
+			$.ajax({
+				type: 'get',
+				url: 'menu.html',
+				success:function(data){
+					$('.menu').html(data);
+					$('.list-item:eq(2)').addClass('active');
+					$('#meter-reading').addClass('in');
+					$('.list-item:eq(2) .sublist-item:eq(0)').addClass('sub_active');
+					$('.list-item').click(function() {
+						$('.list-item').removeClass('active');
+						$(this).addClass('active');
+					});
+				},
+			});
+		});
+	</script>
+</body>
+</html>

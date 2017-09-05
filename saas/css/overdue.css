@@ -1,0 +1,21 @@
+.see-detial-btn{
+	width: 80%;
+}
+.fill-detial-btn{
+	width: 80%;
+	display: inline-block;
+	background: #2CB238;;
+	border-radius: 2px;
+	color: #FFF;
+	text-decoration: none;
+	line-height: 30px;
+}
+.fill-detial-btn:hover{
+	background: #259f30;
+	color: #FFF;
+	text-decoration: none;
+}
+.fill-detial-btn:visited{
+	color: #FFF;
+	text-decoration: none;
+}

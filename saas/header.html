@@ -1,0 +1,27 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  -->
+<span class="saas">利民 SaaS后台管理系统</span> 
+<div class="admin_btn float-right dropdown">
+	<div class="admin_detial float-right">
+		<a href="#" class="dropdown-toggle">
+            <div class="admin_img float-left"><img src="./imgs/user.png"></div>
+			<div class="admin_name float-left"><p>admin</p></div>
+        </a>
+		<ul class="dropdown-menu" role="menu">
+            <li><a href="#">修改密码</a></li>
+            <li><a href="#">退出</a></li>
+        </ul>
+	</div>
+</div>
+<div class="home_btn float-right">
+	<img src="./imgs/home.png">
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".admin_btn").mouseenter(function(){
+		    $('.admin_detial').addClass('open');
+		});
+		$(".admin_btn").mouseleave(function(){
+		    $('.admin_detial').removeClass('open');
+		});
+	});
+</script>

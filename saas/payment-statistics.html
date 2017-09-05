@@ -1,0 +1,153 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台管理系统</title>
+	<meta charset="utf-8">  
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- 时间控件css -->
+	<link rel="stylesheet" type="text/css" href="plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+
+	<!-- custom -->
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/meter-reading-list.css">
+	<link rel="stylesheet" type="text/css" href="./css/timepicker.css">
+</head>
+<body>
+	<header>
+		<div class="header">
+		</div>
+	</header>
+	<div class="content">
+		<div class="menu float-left">
+		</div>
+		<div class="detial float-left">
+			<div id="template">
+				<div class="navigation">
+					<div class="title float-left">缴费统计</div>
+					<div class="path float-right">
+						<span class="home_img"></span>
+						<a href="index.html">主页</a>
+						<span class="next-label">></span>
+						<a href="">缴费管理</a>
+						<span class="next-label">></span>
+						<a href="">缴费统计</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form_block">
+					<form action="" method="get">
+						<div class="update-time float-left">
+							<span>更新时间:</span>
+							<input type="text" id="datetimeStart"  class="form_datetime" name="">
+							<span>-</span>
+							<input type="text" id="datetimeEnd" class="form_datetime" name="">
+						</div>
+						<div class="user-id float-left">
+							<span>支付类型:</span>
+							<select name="">
+								<option value="支付类型">支付类型</option>
+							</select>
+						</div>
+						<div class="clearfix"></div>
+						<div class="search">
+							<input style="width: 110px;" type="submit" value="搜索">
+						</div>
+						<div class="clearfix"></div>
+					</form>
+				</div>
+				<div class="table-content">
+					<table class="table table-bordered">
+						<tr class="category">
+							<td>序号</td>
+							<td>时间</td>
+							<td>支付宝缴费(元)</td>
+							<td>微信宝缴费(元)</td>
+							<td>其他收费(元)</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>2017-05-07 12:30:25</td>
+							<td>300000.00</td>
+							<td>300000.00</td>
+							<td>300000.00</td>
+						</tr>
+					</table>
+				</div>
+				<div class="page-break">
+					<ul class="pagination float-right">
+					    <li><a href="#">上一页</a></li>
+					    <li class="page-break-li active"><a href="#">1</a></li>
+					    <li class="page-break-li"><a href="#">2</a></li>
+					    <li class="page-break-li"><a href="#">3</a></li>
+					    <li class="page-break-li"><a href="#">4</a></li>
+					    <li class="page-break-li"><a href="#">5</a></li>
+					    <li><a href="#">下一页</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<p class="company-name">哈尔滨利民经济技术开发区自来水有限公司</p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- jQuery -->
+	<script src="./plugins/jQuery/jquery-3.2.0.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- 时间控件 -->
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+	<!-- custom -->
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/page-break.js"></script>
+	<script type="text/javascript">
+	    $("#datetimeStart").datetimepicker({
+	        format: 'yyyy-mm-dd HH:ii:ss',
+	        minView: 0 ,
+	        language: 'zh-CN',
+	        autoclose:true,
+	    });
+	    $("#datetimeEnd").datetimepicker({
+	        format: 'yyyy-mm-dd HH:ii:ss',
+	        minView: 0 ,
+	        language: 'zh-CN',
+	        autoclose:true,
+	    });
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'get',
+				url: 'header.html',
+				success:function(data){
+					$('.header').html(data);
+				},
+			});
+			$.ajax({
+				type: 'get',
+				url: 'menu.html',
+				success:function(data){
+					$('.menu').html(data);
+					$('.list-item:eq(3)').addClass('active');
+					$('#payment-managemen').addClass('in');
+					$('.list-item:eq(3) .sublist-item:eq(1)').addClass('sub_active');
+					$('.list-item').click(function() {
+						$('.list-item').removeClass('active');
+						$(this).addClass('active');
+					});
+				},
+			});
+		});
+	</script>
+</body>
+</html>

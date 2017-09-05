@@ -1,0 +1,167 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台管理系统</title>
+	<meta charset="utf-8">  
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="./plugins/bootstrap/css/bootstrap.min.css">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- 时间控件css -->
+	<link rel="stylesheet" type="text/css" href="plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/timepicker.css">
+
+	<!-- custom -->
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/meter-reading-list.css">
+	
+</head>
+<body>
+	<header>
+		<div class="header">
+		</div>
+	</header>
+	<div class="content">
+		<div class="menu float-left">
+		</div>
+		<div class="detial float-left">
+			<div id="template">
+				<div class="navigation">
+					<div class="title float-left">抄表列表</div>
+					<div class="path float-right">
+						<span class="home_img"></span>
+						<a href="index.html">主页</a>
+						<span class="next-label">></span>
+						<a href="meter-reading-list.html">抄表管理</a>
+						<span class="next-label">></span>
+						<a href="meter-reading-list.html">抄表列表</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form_block">
+					<form action="" method="post">
+						<div class="update-time float-left">
+							<span>最后更新时间:</span>
+							<input type="text" id="datetimeStart"  class="form_datetime" name="copytime1">
+							<span>-</span>
+							<input type="text" id="datetimeEnd" class="form_datetime" name="copytime2">
+						</div>
+						<div class="user-id float-left">
+							<span>用户编号:</span>
+							<input type="text" name="copyclientid">
+						</div>
+						<div class="user-name float-left">
+							<span>用户名称:</span>
+							<input type="text" name="copyclientname">
+						</div>
+						<div class="type-people float-left">
+							<span>抄表人:</span>
+							<input type="text" name="copyclientpeople">
+						</div>
+						<div class="search clearfix">
+							<input type="submit" value="搜索">
+						</div>
+						<div class="clearfix"></div>
+					</form>
+				</div>
+				<div class="table-content">
+					<table class="table table-bordered">
+						<tr class="category">
+							<td>用户名称</td>
+							<td>用户编号</td>
+							<td>最后更新时间</td>
+							<td class="number">表度数</td>
+							<td>需交金额(元)</td>
+							<td>抄表人</td>
+							<td>操作</td>
+						</tr>
+						<tr>
+							<td>某某某</td>
+							<td>S00001</td>
+							<td>2017-07-19</td>
+							<td class="number">
+								<span>表一：</span><span>25</span>&nbsp&nbsp
+								<span>表二：</span><span>25</span>&nbsp&nbsp
+								<span>表三：</span><span>25</span>&nbsp&nbsp
+							</td>
+							<td>300.03</td>
+							<td>某某某</td>
+							<td><a class="see-detial-btn" href="meter-reading-list-detial.html">查看详情</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="page-break">
+					<ul class="pagination float-right">
+					    <li><a href="#">上一页</a></li>
+					    <li class="page-break-li active"><a href="#">1</a></li>
+					    <li class="page-break-li"><a href="#">2</a></li>
+					    <li class="page-break-li"><a href="#">3</a></li>
+					    <li class="page-break-li"><a href="#">4</a></li>
+					    <li class="page-break-li"><a href="#">5</a></li>
+					    <li><a href="#">下一页</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<p class="company-name">哈尔滨利民经济技术开发区自来水有限公司</p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- jQuery -->
+	<script src="./plugins/jQuery/jquery-3.2.0.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- 时间控件 -->
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+
+	<!-- custom -->
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/page-break.js"></script>
+	<script type="text/javascript">
+	    $("#datetimeStart").datetimepicker({
+	        format: 'yyyy-mm-dd HH:ii:ss',
+	        minView: 0 ,
+	        language: 'zh-CN',
+	        autoclose:true,
+	    });
+	    $("#datetimeEnd").datetimepicker({
+	        format: 'yyyy-mm-dd HH:ii:ss',
+	        minView: 0 ,
+	        language: 'zh-CN',
+	        autoclose:true,
+	    });
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.ajax({
+				type: 'get',
+				url: 'header.html',
+				success:function(data){
+					$('.header').html(data);
+				},
+			});
+			$.ajax({
+				type: 'get',
+				url: 'menu.html',
+				success:function(data){
+					$('.menu').html(data);
+					$('.list-item:eq(2)').addClass('active');
+					$('#meter-reading').addClass('in');
+					$('.list-item:eq(2) .sublist-item:eq(0)').addClass('sub_active');
+					$('.list-item').click(function() {
+						$('.list-item').removeClass('active');
+						$(this).addClass('active');
+					});
+				},
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>  -->
+<div class="admin">
+	<div class="header-img float-left"><img src="./imgs/user.png"></div>
+	<div class="admin-name float-left"><p>admin</p></div>
+	<div class="clearfix"></div>
+</div>
+<div class="master">系统主导航</div>
+<ul class="menulist" id="menu">
+	<li class="list-item panel">
+		<a href="index.html" data-target="#use-help" class="collapsed" data-toggle="collapse" data-parent="#menu">
+			<img class="menulist_img" src="./imgs/use-help.png">
+			<span>使用帮助</span>
+		</a>
+		<div id="use-help" class="collapse"></div>
+	</li>
+	<li class="list-item panel">
+		<a data-target="#system-maintenance" class="collapsed" data-toggle="collapse" data-parent="#menu">
+			<img class="menulist_img" src="./imgs/system.png">
+			<span>系统维护</span>
+		</a>
+		<ul id="system-maintenance" class="collapse">
+			<li class="sublist-item">
+				<a href="system-log.html">
+					<img src="./imgs/list.png">
+					<span>系统日志</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="system-manage-list.html">
+					<img src="./imgs/list.png">
+					<span>管理员列表</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="system-role-list.html">
+					<img src="./imgs/list.png">
+					<span>角色列表</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li class="list-item panel">
+		<a data-target="#meter-reading" class="collapsed" data-toggle="collapse" data-parent="#menu">
+			<img class="menulist_img" src="./imgs/meter.png">
+			<span>抄表管理</span>
+			<!-- <span class="up">&#8249</span> -->
+		</a>
+		<ul id="meter-reading" class="collapse">
+			<li class="sublist-item">
+				<a href="meter-reading-list.html">
+					<img src="./imgs/list.png">
+					<span>抄表列表</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="meter-reading-type-in-user-id.html">
+					<img src="./imgs/list.png">
+					<span>抄表录入</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="repairs-type-in.html">
+					<img src="./imgs/list.png">
+					<span>报修录入</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="report-type-in.html">
+					<img src="./imgs/list.png">
+					<span>举报录入</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li class="list-item panel">
+		<a data-target="#payment-managemen" class="collapsed" data-toggle="collapse" data-parent="#menu">
+			<img class="menulist_img" src="./imgs/payment.png">
+			<span>缴费管理</span>
+			<!-- <span class="up down">&#8249</span> -->
+		</a>
+		<ul id="payment-managemen" class="collapse">
+			<li class="sublist-item">
+				<a href="payment-type-in.html">
+					<img src="./imgs/list.png">
+					<span>缴费录入</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="payment-statistics.html">
+					<img src="./imgs/list.png">
+					<span>缴费统计</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="overdue.html">
+					<img src="./imgs/list.png">
+					<span>逾期</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="print-data-id.html">
+					<img src="./imgs/list.png">
+					<span>打印数据</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="payment-detial.html">
+					<img src="./imgs/list.png">
+					<span>收费明细</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li class="list-item panel">
+		<a data-target="#user-list" class="collapsed" data-toggle="collapse" data-parent="#menu">
+			<img class="menulist_img" src="./imgs/user-manage.png">
+			<span>用户管理</span>
+			<!-- <span class="up">&#8249</span> -->
+		</a>
+		<ul id="user-list" class="collapse">
+			<li class="sublist-item">
+				<a href="user-list.html">
+					<img src="./imgs/list.png">
+					<span>用户列表</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li class="list-item  panel">
+		<a data-target="#service-management" class="collapsed" data-toggle="collapse" data-parent="#menu">
+			<img class="menulist_img" src="./imgs/repairs.png">
+			<span>报修管理</span>
+<!-- 						<span class="up">&#8249</span>
+-->
+		</a>
+		<ul id="service-management" class="collapse">
+			<li class="sublist-item">
+				<a href="repairs-list.html">
+					<img src="./imgs/list.png">
+					<span>报修列表</span>
+				</a>
+			</li>
+			<li class="sublist-item">
+				<a href="report-list.html">
+					<img src="./imgs/list.png">
+					<span>举报列表</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+</ul>
+<script type="text/javascript">
+	$(document).ready(function() {
+		function isContains(str, substr) {
+		    return str.indexOf(substr) >= 0;
+		}
+		$('.list-item').click(function() {
+			imgs = $('.menulist_img');
+			//遍历所有imgs 去掉 ‘-active’
+			$.each(imgs, function(index, val) {
+				var img_src = $(val).attr('src');
+				img_src = isContains(img_src,'active') ? img_src.replace('-active.png','.png') : img_src;
+				$(val).attr('src',img_src);
+			});
+			//将当前点击的img 加上 ‘-active’
+			var current_img = $(this).children('a').children('.menulist_img');
+			current_img_src = current_img.attr('src').replace('.png','-active.png');
+			current_img.attr('src',current_img_src);
+		});
+		// $('.sublist-item').click(function(e) {
+		// 	event.stopPropagation();
+		// });
+	});
+</script>

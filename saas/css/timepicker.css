@@ -1,0 +1,8 @@
+.datetimepicker .table-condensed thead tr .next:hover,
+.next{
+	background: url(../imgs/next.png) no-repeat 2px;
+}
+.datetimepicker .table-condensed thead tr .prev:hover,
+.prev{
+	background: url(../imgs/prev.png) no-repeat 2px;
+}

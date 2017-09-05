@@ -1,0 +1,20 @@
+.navigation{
+	line-height: 66px;
+}
+.title{
+	font-size: 24px;
+	color: #000000;
+	letter-spacing: 0;
+	font-weight: bold;
+}
+.path{
+	font-size: 15px;
+	color: #444444;
+	letter-spacing: 0;
+}
+.path a:hover{
+	text-decoration: none;
+}
+.path .next-label{
+	color: #d5d5d5;
+}

@@ -1,0 +1,13 @@
+.handle{
+	background: #2CB238;
+}
+.handle:hover{
+	background: #2bab36;
+}
+.handled,
+.handled:hover{
+	background: #DCDCDC;
+}
+.handled:visited{
+	color: #333;
+}
